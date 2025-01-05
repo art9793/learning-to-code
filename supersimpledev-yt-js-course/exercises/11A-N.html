@@ -171,6 +171,22 @@
     console.log(minMax([3]));
     // 11 N 
 
+    function countWords(words) {
+      let wordObject = {}; 
+
+      for (let i = 0; i < words.length; i++) {
+        const word = words[i]; 
+        if (!wordObject[word]) {
+            wordObject[word] = 1;
+          } else {
+            wordObject[word]++;
+          }
+      }
+
+      console.log(wordObject);
+    } 
+
+    countWords(['what', 'the', 'hell', 'what']);
   </script>
 </body>
 </html>
