@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // 11 O, 11 P 
+
+    function functionSearch(array) { 
+      let index = null;
+      for (i = 0; i < array.length; i++) {
+        if (array[i] === 'search') {
+          index = i; 
+          break;
+        } else {
+          index = -1;
+        }
+      } 
+      console.log(index)
+    } 
+
+    functionSearch(['hello', 'world', 'search', 'good']); 
+    functionSearch(['hello', 'world', 'search', 'good', 'search']); 
+    functionSearch(['not', 'found']); 
+
+    // 11 Q 
+    function findIndex(array, word) {
+      let index = null; 
+      for (i = 0; i < array.length; i++) {
+        if (array[i] === word) {
+          index = i; 
+          break;
+        } else {
+          index = -1;
+        }
+      } 
+      console.log(index) 
+    } 
+
+    findIndex(['green', 'red', 'blue', 'red'], 'red') 
+    findIndex(['green', 'red', 'blue', 'red'], 'yellow')
+
+    // 11 R , S 
+    function removeEgg(foods) { 
+      let result = []; 
+      let eggCount = 0;
+      for (i = 0; i < foods.length; i++) {
+        if (foods[i] === 'egg' && eggCount < 2) {
+          eggCount ++;
+          console.log(eggCount)
+          continue;
+        } else {
+          result.push(foods[i]); 
+        } 
+      } 
+      return result;
+    } 
+
+    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham'])); 
+
+    // 11 T U 
+    function removeEgg(foods) { 
+      let result = []; 
+      let eggCount = 0; 
+      const foodsCopy = foods.slice(); 
+      let reversedFoods = foodsCopy.reverse();
+      for (i = 0; i < reversedFoods.length; i++) {
+        if (reversedFoods[i] === 'egg' && eggCount < 2) {
+          eggCount ++;
+          continue;
+        } else {
+          result.push(reversedFoods[i]); 
+        } 
+      } 
+      return result.reverse();
+    } 
+
+    const foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
+    console.log(removeEgg(foods));
+    console.log(foods);
+
+    // 11 V 
+
+    let i = 1; 
+
+    while(i <= 20) { 
+      if (i % 3 === 0 && i % 5 === 0) {
+        console.log('FizzBuzz');
+        i++;
+      } else if (i % 3 === 0) {
+        console.log('Fizz');
+        i++;
+      } else if (i % 5 === 0) {
+        console.log('Buzz');
+        i++;
+      } else {
+        console.log(i);
+        i++;
+      }
+      
+    }
+    
+  </script>
+</body>
+</html>
