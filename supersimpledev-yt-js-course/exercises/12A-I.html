@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12-App</title>
+</head>
+<body> 
+  <button onclick="updateButton()" class="js-button">Start</button> 
+  <div style="margin: 10px;"></div>
+  <button onclick="updateCartButton()" class="js-cart-button">Add to cart</button> 
+  <p class="add-to-cart-placeholder"></p>
+  <button onclick="addMessage()" class="js-add-button">Add</button>
+  <button onclick="removeMessage()" class="js-remove-button">Remove</button>
+  <script> 
+
+    // 12 A 
+    const add = function() {
+      console.log(2+3); 
+    } 
+
+    add();
+    add(); 
+
+    //12 B 
+    const runTwice = function(fun) {
+      fun();
+      fun();
+    } 
+
+    runTwice(function() {console.log('12b')}); 
+
+    // 12 C 
+    // function updateButton() {
+    //   setTimeout(function() {
+    //     document.querySelector('.js-button').innerHTML = 'Finished!';
+    //   }, 1000)
+    // }; 
+
+    // 12 D 
+    function updateButton() { 
+      const buttonElement = document.querySelector('.js-button'); 
+      buttonElement.innerHTML = 'Loading...';
+      setTimeout(function() {
+        buttonElement.innerHTML = 'Finished!';
+      }, 1000)
+    }; 
+
+    // 12 E 
+    // function updateCartButton() { 
+    //   const textElement = document.querySelector('.add-to-cart-placeholder'); 
+    //   textElement.innerHTML = 'Added'; 
+    //   setTimeout(function() {
+    //     textElement.innerHTML = ''; 
+    //   }, 2000)
+    // }; 
+
+    // 12 F 
+    let timeoutId;
+    function updateCartButton() { 
+      const textElement = document.querySelector('.add-to-cart-placeholder'); 
+      textElement.innerHTML = 'Added'; 
+      clearTimeout(timeoutId); 
+      timeoutId = setTimeout(function() {
+        textElement.innerHTML = ''; 
+      }, 2000)
+    }; 
+
+    // 12 G 
+    // setInterval(() => { 
+    //   if (document.title === '12-App') {
+    //     document.title = '(2) New messages'; 
+    //   } else {
+    //   document.title = '12-App'; 
+    //   }
+    // }, 1000); 
+
+    // 12 H 
+    let messages = 2; 
+    function addMessage() {
+      messages ++; 
+    } 
+
+    function removeMessage() {
+      messages --; 
+    } 
+
+    setInterval(() => { 
+      if (messages <= 0) {
+        document.title = '12-App'; 
+        return;
+      }
+      if (document.title === '12-App') {
+        document.title = `${messages} New messages`; 
+      } else {
+      document.title = '12-App'; 
+      }
+    }, 1000); 
+  </script>
+</body>
+</html>
