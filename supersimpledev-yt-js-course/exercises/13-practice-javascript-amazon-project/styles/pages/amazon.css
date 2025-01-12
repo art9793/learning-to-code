@@ -153,4 +153,8 @@
   width: 100%;
   padding: 8px;
   border-radius: 50px;
+} 
+
+.add-message-opacity {
+  opacity: 1;
 }
