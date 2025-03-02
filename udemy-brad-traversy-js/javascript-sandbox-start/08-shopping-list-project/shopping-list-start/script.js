@@ -55,4 +55,4 @@ itemForm.addEventListener('submit', addItem);
 itemList.addEventListener('click', removeItem); 
 clearBtn.addEventListener('click', clearItmes); 
 
-// comments to git 
+// comments to git  
