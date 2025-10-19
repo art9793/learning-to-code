@@ -2,6 +2,7 @@ import { useState } from "react"
 import MovieCard from "../components/MovieCard"
 
 function Home() { 
+  const [searchQuery, setSearchQuery] = useState("");
   const movies = [
     {
       id: 1, 
@@ -22,14 +23,22 @@ function Home() {
     }
   ] 
 
-  function handleSearch() {
+  function handleSearch(e) {
+    e.preventDefault()
+    alert(searchQuery); 
+    setSearchQuery("")
 
   }
 
   return (
     <div className="home"> 
       <form onSubmit={handleSearch} className="search-form">
-        <input type="text" className="search-input" placeholder="Search for movies..."/>
+        <input 
+          type="text" 
+          className="search-input" 
+          placeholder="Search for movies..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}/>
         <button className="search-btn" type="submit">Search</button>
 
       </form>
