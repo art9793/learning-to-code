@@ -1,20 +1,13 @@
-import './App.css'
+import './App.css' 
+import Home from './pages/Home'
 
 function App() {
   return (
     <>
-      <Text />
-      <Text />
+      <Home/>
     </>
   )
 } 
 
-function Text() {
-  return (
-    <>
-      <p>Hello World!</p>
-    </>
-  )
-}
 
 export default App
